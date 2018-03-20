@@ -1,0 +1,22 @@
+ul{ 
+    background-color: #3232EF;
+    height: 4em;
+}
+
+li{ 
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 2em;
+    margin: 20px;
+}
+
+li a{
+    text-decoration: none;
+}
+a:hover{
+    background-color: white;
+    color: grey;
+    padding: 5px;
+    border-radius: 5px;
+}

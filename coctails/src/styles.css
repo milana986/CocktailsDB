@@ -1,9 +1,10 @@
+
 *{
     margin:0;
     padding: 0;
     box-sizing:border-box;
     font-family: "Open Sans", sans-serif;
-    color:#797979;
+    color:grey;
 }
 
 html,body{
@@ -11,5 +12,4 @@ html,body{
     height: 100%;
     margin: 0 auto;
 }
-
 

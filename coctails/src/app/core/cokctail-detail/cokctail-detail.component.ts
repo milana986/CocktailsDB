@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-cokctail-detail',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cokctail-detail.component.css']
 })
 export class CokctailDetailComponent implements OnInit {
+@Input() cocktail:any;
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -10,7 +10,9 @@ import { HeaderComponent } from './core/header/header.component';
 import { CokctailListComponent } from './core/cokctail-list/cokctail-list.component';
 import { CokctailDetailComponent } from './core/cokctail-detail/cokctail-detail.component';
 import { CocktailService } from './core/cocktail.service';
-import { NavbarComponent } from './core/navbar/navbar.component'
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { HomeComponent } from './core/home/home.component';
+import { CocktailComponent } from './core/cocktail/cocktail.component'
  
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NavbarComponent } from './core/navbar/navbar.component'
     HeaderComponent,
     CokctailListComponent,
     CokctailDetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    CocktailComponent
   ],
   imports: [
     BrowserModule,

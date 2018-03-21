@@ -6,7 +6,6 @@ import { Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./cokctail-detail.component.css']
 })
 export class CokctailDetailComponent implements OnInit {
-@Input() cocktail:any;
 
   constructor() { }
 

@@ -7,10 +7,9 @@
     </select>
     <input type="text" *ngIf="flag" name="text" [(ngModel)]="text" placeholder="Ingredients ...">
 </form>
-<div>
-    <div *ngFor="let cocktail of cocktails" id="list" >
-            <p>{{cocktails | json}}</p>
-        <app-cokctail-detail [cocktail]="cocktail"></app-cokctail-detail>
+<div id="list">
+    <div *ngFor="let cocktail of cocktails"  >
+        <app-cocktail [cocktail]="cocktail"></app-cocktail>
     </div>
     <div id="detail">
 

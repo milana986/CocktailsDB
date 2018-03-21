@@ -1,0 +1,22 @@
+.cocktail{
+    height: 100px;
+    border: 1px solid #E0DADA;
+    width: 100%;
+    clear: left;
+}
+figure{
+    width: 25%;
+    float: left;
+}
+figure img{
+    width: 40%;
+    border-radius: 50%;
+    border: 1px solid #DBD4D4;
+    margin:10px 25%;
+}
+.desc {
+    width: 75%;
+    border-radius: 2%;
+    float: left;
+    padding: 10px;
+}

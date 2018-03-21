@@ -1,20 +1,21 @@
 
-<form>  
-  <label for="sel">Filter</label>
-    <select name="sel" [(ngModel)]="query" (change)="sendQuery()" id="sel">
-      <option value="s=">Search cocktail by name</option>
-      <option value="i=">Search ingredient by name</option>
-      <option value=""></option>
-      <option value=""></option>
+<form (submit)="submit()">  
+<label for="sel">Search cocktails</label>
+    <select name="sel" [(ngModel)]="query" (change)="onChange()" id="sel">
+    <option value="s=">Search cocktail by name</option>
+    <option value="i=">Search ingredient by name</option>
     </select>
-    <input type="text" *ngIf="flag">
+    <input type="text" *ngIf="flag" name="text" [(ngModel)]="text" placeholder="Ingredients ...">
 </form>
+<div>
+    <div *ngFor="let cocktail of cocktails" id="list" >
+            <p>{{cocktails | json}}</p>
+        <app-cokctail-detail [cocktail]="cocktail"></app-cokctail-detail>
+    </div>
+    <div id="detail">
 
-<p>
-    {{cocktails | json}}
-</p>
-
-<div *ngFor="let cocktail of cocktails?.drinks" >
-    <app-cokctail-detail [cocktail]="cocktail"></app-cokctail-detail>
+    </div>
 </div>
+
+
 

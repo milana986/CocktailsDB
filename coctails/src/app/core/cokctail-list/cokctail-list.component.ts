@@ -7,25 +7,33 @@ import { CocktailService } from '../cocktail.service';
   styleUrls: ['./cokctail-list.component.css']
 })
 export class CokctailListComponent implements OnInit {
-  cocktails: any;
-  search: string = 'Vodka';
-  query:string = '';
+  cocktails: any[];
+  query:string;
+  text: string = '';
   flag = false;
 
   constructor(private CocktailService: CocktailService) { }
 
   ngOnInit() {
-    this.CocktailService.getByFilter('i=' + this.search).subscribe( data => {
-      this.cocktails = data;
-    });
+    this.CocktailService.getByName('s').subscribe( data => this.cocktails = data.drinks);
   }
 
-  sendQuery(){
-    this.flag = !this.flag;
-    console.log(this.query);
-   // this.router.navigate()
+  onChange(){
+    this.flag = true;
+    this.getCocktails();
   }
 
+  submit(){
+    this.getCocktails();
+  }
+
+  getCocktails(){
+    if( this.query === 's='){
+      this.CocktailService.getByName(this.query + this.text).subscribe( data => this.cocktails = data.drinks);
+    }else if(this.query === 'i=') {
+      this.CocktailService.getByName(this.query + this.text).subscribe( data => this.cocktails = data.ingredients);
+    }
+  }
 
 
 }

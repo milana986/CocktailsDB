@@ -12,7 +12,9 @@ import { CokctailDetailComponent } from './core/cokctail-detail/cokctail-detail.
 import { CocktailService } from './core/cocktail.service';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { HomeComponent } from './core/home/home.component';
-import { CocktailComponent } from './core/cocktail/cocktail.component'
+import { CocktailComponent } from './core/cocktail/cocktail.component';
+import { IngredientsPipe } from './core/ingredients.pipe';
+import { IngredientsComponent } from './core/cokctail-list/ingredients/ingredients.component'
  
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CocktailComponent } from './core/cocktail/cocktail.component'
     CokctailDetailComponent,
     NavbarComponent,
     HomeComponent,
-    CocktailComponent
+    CocktailComponent,
+    IngredientsPipe,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,9 @@
     <img src="{{cocktail.strDrinkThumb}}" >
   </figure>
   <div class="desc">
-    <h4>{{cocktail.strDrink}}</h4>
-    <p></p>
+    <h4>{{cocktail?.strDrink}}</h4>
+    <p>{{cocktail | ingredientArr }}</p>
   </div>
 </div>
+
+

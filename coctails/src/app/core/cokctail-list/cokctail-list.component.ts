@@ -13,6 +13,7 @@ export class CokctailListComponent implements OnInit {
   query:string;
   text: string = '';
   flag = false;
+  selectedId: number;
 
   constructor(private CocktailService: CocktailService, private router: Router) { }
 
@@ -35,6 +36,10 @@ export class CokctailListComponent implements OnInit {
     }else if(this.query === 'i=') {
       this.CocktailService.getByName(this.query + this.text).subscribe( data => this.ingredients = data.ingredients);
     }
+  }
+
+  changeBkg(id: number){
+    this.selectedId = id;
   }
 
 }

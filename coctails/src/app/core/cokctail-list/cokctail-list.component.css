@@ -19,10 +19,12 @@ select, input[type="text"]{
     justify-content: space-between;
 }
 #list{
-    width: 60%;
+    width: 58%;
 }
 #detail{
-    width: 35%;
-    border: 1px solid lightgray;
-    height: 40em;
+    width: 40%;
 } 
+
+.selected{
+    background: #BDEBFA;
+}

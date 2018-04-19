@@ -1,3 +1,4 @@
+<!-- [ngClass]="{'col-12':document?.status=='recorded'}"  -->
 
 <form (submit)="submit()">  
 <label for="sel">Search cocktails</label>
@@ -9,8 +10,8 @@
 </form>
 <div class="content">
     <div id="list">
-        <div *ngFor="let cocktail of cocktails" >
-            <app-cocktail [cocktail]="cocktail"></app-cocktail>
+        <div *ngFor="let cocktail of cocktails" [ngClass]="{'selected': cocktail['idDrink'] === selectedId}">
+            <app-cocktail [cocktail]="cocktail" (onEmittedId)="changeBkg($event)"></app-cocktail>
         </div>
     </div>
     <div id="detail">

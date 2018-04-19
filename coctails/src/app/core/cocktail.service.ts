@@ -28,7 +28,7 @@ export class CocktailService {
     });
   }
 
-  getDetails(id:number): Observable<any>{
+  getCocktail(id:number): Observable<any>{
     return this.http.get(url3 + 'i=' + id).map(res => {
       console.log(res)
       return res;

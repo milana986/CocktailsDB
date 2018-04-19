@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-cocktail',
@@ -7,10 +7,17 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class CocktailComponent implements OnInit {
   @Input() cocktail:any;
+  @Output() onEmittedId = new EventEmitter<any>();
+ 
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {
+    console.log(this.cocktail)
+  } 
 
-  ngOnInit() {} 
+  onClick(){
+    this.onEmittedId.emit(this.cocktail.idDrink);
+  }
 
   
 

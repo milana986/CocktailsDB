@@ -7,11 +7,18 @@
     </select>
     <input type="text" *ngIf="flag" name="text" [(ngModel)]="text" placeholder="Ingredients ...">
 </form>
-<div id="list">
-    <div *ngFor="let cocktail of cocktails" >
-        <app-cocktail [cocktail]="cocktail" ></app-cocktail>
+<div class="content">
+    <div id="list">
+        <div *ngFor="let cocktail of cocktails" >
+            <app-cocktail [cocktail]="cocktail"></app-cocktail>
+        </div>
+    </div>
+    <div id="detail">
+        <router-outlet></router-outlet>
     </div>
 </div>
+
+<!-- on the end -->
 <div>
     <app-ingredients [ingredients]="ingredients"></app-ingredients>
 </div>

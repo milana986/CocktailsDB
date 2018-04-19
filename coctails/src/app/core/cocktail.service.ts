@@ -28,8 +28,8 @@ export class CocktailService {
     });
   }
 
-  getDetails(params:string): Observable<any>{
-    return this.http.get(url3 + params).map(res => {
+  getDetails(id:number): Observable<any>{
+    return this.http.get(url3 + 'i=' + id).map(res => {
       console.log(res)
       return res;
     });

@@ -1,9 +1,10 @@
+
 <div class="cocktail">
   <figure>
     <img src="{{cocktail.strDrinkThumb}}" >
   </figure>
-  <div class="desc">
-    <h4>{{cocktail?.strDrink}}</h4>
+  <div class="desc" >
+    <h4 [routerLink]="['/cocktails', cocktail.idDrink]">{{cocktail?.strDrink}}</h4>
     <p>{{cocktail | ingredientArr }}</p>
   </div>
 </div>

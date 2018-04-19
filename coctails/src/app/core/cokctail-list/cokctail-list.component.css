@@ -14,10 +14,15 @@ select, input[type="text"]{
     color: #2323A6;
 }
 
+.content{
+    display: flex;
+    justify-content: space-between;
+}
 #list{
     width: 60%;
-    margin-top: 20px;
 }
 #detail{
-    width: 30%;
+    width: 35%;
+    border: 1px solid lightgray;
+    height: 40em;
 } 

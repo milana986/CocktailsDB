@@ -37,5 +37,4 @@ export class CokctailListComponent implements OnInit {
     }
   }
 
-
 }

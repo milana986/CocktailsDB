@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'; 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'
 
@@ -12,7 +11,7 @@ import { CokctailDetailComponent } from './core/cokctail-detail/cokctail-detail.
 import { CocktailService } from './core/cocktail.service';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { HomeComponent } from './core/home/home.component';
-import { CocktailComponent } from './core/cocktail/cocktail.component';
+import { CocktailComponent } from './core/cokctail-list/cocktail/cocktail.component';
 import { IngredientsPipe } from './core/ingredients.pipe';
 import { IngredientsComponent } from './core/cokctail-list/ingredients/ingredients.component'
  
@@ -31,7 +30,6 @@ import { IngredientsComponent } from './core/cokctail-list/ingredients/ingredien
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule, 
     HttpClientModule,
     AppRoutingModule
   ],

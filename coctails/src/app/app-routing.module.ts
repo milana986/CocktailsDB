@@ -8,9 +8,10 @@ import { IngredientsComponent } from './core/cokctail-list/ingredients/ingredien
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'cocktails', component: CokctailListComponent},
+  { path: 'cocktails', component: CokctailListComponent, children: [
+      {path: ':id', component: CokctailDetailComponent}
+  ]},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
-  // { path: 'cocktails/detail', component: CokctailDetailComponent}
 ];
 
 @NgModule({
@@ -18,6 +19,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: []
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

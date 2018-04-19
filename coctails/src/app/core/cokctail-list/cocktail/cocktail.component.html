@@ -1,0 +1,12 @@
+
+<div class="cocktail" [routerLink]="['/cocktails', cocktail.idDrink]" (click)="onClick()">
+  <figure>
+    <img src="{{cocktail.strDrinkThumb}}" >
+  </figure>
+  <div class="desc" >
+    <h4>{{cocktail?.strDrink}}</h4>
+    <p>{{cocktail | ingredientArr }}</p>
+  </div>
+</div>
+
+

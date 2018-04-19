@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CocktailService } from '../cocktail.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cokctail-list',
@@ -7,25 +8,38 @@ import { CocktailService } from '../cocktail.service';
   styleUrls: ['./cokctail-list.component.css']
 })
 export class CokctailListComponent implements OnInit {
-  cocktails: any;
-  search: string = 'Vodka';
-  query:string = '';
+  cocktails: any[];
+  ingredients: any[];
+  query:string;
+  text: string = '';
   flag = false;
+  selectedId: number;
 
-  constructor(private CocktailService: CocktailService) { }
+  constructor(private CocktailService: CocktailService, private router: Router) { }
 
   ngOnInit() {
-    this.CocktailService.getByFilter('i=' + this.search).subscribe( data => {
-      this.cocktails = data;
-    });
+    this.CocktailService.getByName('s').subscribe( data => this.cocktails = data.drinks);
   }
 
-  sendQuery(){
-    this.flag = !this.flag;
-    console.log(this.query);
-   // this.router.navigate()
+  onChange(){
+    this.flag = true;
+    this.getCocktails();
   }
 
+  submit(){
+    this.getCocktails();
+  }
 
+  getCocktails(){
+    if( this.query === 's='){
+      this.CocktailService.getByName(this.query + this.text).subscribe( data => this.cocktails = data.drinks);
+    }else if(this.query === 'i=') {
+      this.CocktailService.getByName(this.query + this.text).subscribe( data => this.ingredients = data.ingredients);
+    }
+  }
+
+  changeBkg(id: number){
+    this.selectedId = id;
+  }
 
 }

@@ -16,18 +16,21 @@ export class CocktailService {
 
   getByName(params:string): Observable<any>{
     return this.http.get(url1 + params).map(res => {
+      console.log(res)
       return res;
     });
   }
 
   getByFilter(params:string): Observable<any>{
     return this.http.get(url2 + params).map(res => {
+      console.log(res)
       return res;
     });
   }
 
-  getDetails(params:string): Observable<any>{
-    return this.http.get(url3 + params).map(res => {
+  getCocktail(id:number): Observable<any>{
+    return this.http.get(url3 + 'i=' + id).map(res => {
+      console.log(res)
       return res;
     });
   }

@@ -1,20 +1,28 @@
+<!-- [ngClass]="{'col-12':document?.status=='recorded'}"  -->
 
-<form>  
-  <label for="sel">Filter</label>
-    <select name="sel" [(ngModel)]="query" (change)="sendQuery()" id="sel">
-      <option value="s=">Search cocktail by name</option>
-      <option value="i=">Search ingredient by name</option>
-      <option value=""></option>
-      <option value=""></option>
+<form (submit)="submit()">  
+<label for="sel">Search cocktails</label>
+    <select name="sel" [(ngModel)]="query" (change)="onChange()" id="sel">
+    <option value="s=">Search cocktail by name</option>
+    <option value="i=">Search ingredient by name</option>
     </select>
-    <input type="text" *ngIf="flag">
+    <input type="text" *ngIf="flag" name="text" [(ngModel)]="text" placeholder="Ingredients ...">
 </form>
-
-<p>
-    {{cocktails | json}}
-</p>
-
-<div *ngFor="let cocktail of cocktails?.drinks" >
-    <app-cokctail-detail [cocktail]="cocktail"></app-cokctail-detail>
+<div class="content">
+    <div id="list">
+        <div *ngFor="let cocktail of cocktails" [ngClass]="{'selected': cocktail['idDrink'] === selectedId}">
+            <app-cocktail [cocktail]="cocktail" (onEmittedId)="changeBkg($event)"></app-cocktail>
+        </div>
+    </div>
+    <div id="detail">
+        <router-outlet></router-outlet>
+    </div>
 </div>
+
+<!-- on the end -->
+<div>
+    <app-ingredients [ingredients]="ingredients"></app-ingredients>
+</div>
+
+
 
